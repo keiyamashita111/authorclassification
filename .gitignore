@@ -1,0 +1,10 @@
+dataset.pickle
+GLOVE_DIR
+model_fewshot_1.h5
+SmallAATest
+SmallAATest2
+SmallestTest
+bert/bert_model
+bert/glue_data
+
+
