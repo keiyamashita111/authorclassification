@@ -1,0 +1,130 @@
+export BERT_BASE_DIR=/home/tokyotechies/kei/author_classification/bert/bert_model/uncased_L-12_H-768_A-12
+
+export GLUE_DIR=/home/tokyotechies/kei/author_classification/bert/glue_data
+
+list of 20
+[ 4,  8,  9, 14, 15, 18, 19, 21, 25, 26, 30, 33, 37, 38, 39, 42, 43, 45, 48, 50])
+
+python run_classifier.py \
+  --task_name=AuthorClass \
+  --do_train=false \
+  --do_eval=false \
+  --do_doc_eval=true \
+  --data_dir=$GLUE_DIR/SmallAATest \
+  --vocab_file=$BERT_BASE_DIR/vocab.txt \
+  --bert_config_file=$BERT_BASE_DIR/bert_config.json \
+  --init_checkpoint=$BERT_BASE_DIR/bert_model.ckpt \
+  --max_seq_length=64 \
+  --train_batch_size=32 \
+  --learning_rate=2e-3 \
+  --num_train_epochs=50.0 \
+  --output_dir=/home/tokyotechies/kei/author_classification/SmallAATest2/
+
+python run_classifier.py \
+  --task_name=AuthorClass \
+  --do_train=false \
+  --do_eval=true \
+  --data_dir=$GLUE_DIR/SmallAATest \
+  --vocab_file=$BERT_BASE_DIR/vocab.txt \
+  --bert_config_file=$BERT_BASE_DIR/bert_config.json \
+  --init_checkpoint=$BERT_BASE_DIR/bert_model.ckpt \
+  --max_seq_length=64 \
+  --train_batch_size=32 \
+  --learning_rate=2e-3 \
+  --num_train_epochs=50.0 \
+  --output_dir=/home/tokyotechies/kei/author_classification/SmallAATest2/
+
+python run_classifier.py \
+  --task_name=AuthorClass \
+  --do_train=false \
+  --do_eval=false \
+  --do_predict=true \
+  --data_dir=$GLUE_DIR/SmallAATest \
+  --vocab_file=$BERT_BASE_DIR/vocab.txt \
+  --bert_config_file=$BERT_BASE_DIR/bert_config.json \
+  --init_checkpoint=$BERT_BASE_DIR/bert_model.ckpt \
+  --max_seq_length=64 \
+  --train_batch_size=32 \
+  --learning_rate=2e-3 \
+  --num_train_epochs=50.0 \
+  --output_dir=/home/tokyotechies/kei/author_classification/SmallAATest2/
+
+
+python run_classifier.py \
+  --task_name=AuthorClass \
+  --do_train=true \
+  --do_eval=true \
+  --data_dir=$GLUE_DIR/SmallAATest \
+  --vocab_file=$BERT_BASE_DIR/vocab.txt \
+  --bert_config_file=$BERT_BASE_DIR/bert_config.json \
+  --init_checkpoint=$BERT_BASE_DIR/bert_model.ckpt \
+  --max_seq_length=64 \
+  --train_batch_size=32 \
+  --learning_rate=2e-3 \
+  --num_train_epochs=50.0 \
+  --output_dir=/home/tokyotechies/kei/author_classification/SmallAATest/
+
+python run_classifier.py \
+  --task_name=AuthorClass \
+  --do_train=true \
+  --do_eval=true \
+  --data_dir=$GLUE_DIR/SmallestTest \
+  --vocab_file=$BERT_BASE_DIR/vocab.txt \
+  --bert_config_file=$BERT_BASE_DIR/bert_config.json \
+  --init_checkpoint=$BERT_BASE_DIR/bert_model.ckpt \
+  --max_seq_length=64 \
+  --train_batch_size=32 \
+  --learning_rate=2e-5 \
+  --num_train_epochs=50.0 \
+  --output_dir=/home/tokyotechies/kei/author_classification/SmallestTest/
+
+
+
+python run_classifier.py \
+  --task_name=AuthorClass \
+  --do_train=true \
+  --do_eval=true \
+  --data_dir=$GLUE_DIR/AuthorClass \
+  --vocab_file=$BERT_BASE_DIR/vocab.txt \
+  --bert_config_file=$BERT_BASE_DIR/bert_config.json \
+  --init_checkpoint=$BERT_BASE_DIR/bert_model.ckpt \
+  --max_seq_length=64 \
+  --train_batch_size=32 \
+  --learning_rate=2e-5 \
+  --num_train_epochs=50.0 \
+  --output_dir=/tmp/AuthorClass_output/
+
+python run_classifier.py \
+  --task_name=AuthorClass \
+  --do_train=true \
+  --do_eval=true \
+  --data_dir=$GLUE_DIR/AuthorClass \
+  --vocab_file=$BERT_BASE_DIR/vocab.txt \
+  --bert_config_file=$BERT_BASE_DIR/bert_config.json \
+  --init_checkpoint=$BERT_BASE_DIR/bert_model.ckpt \
+  --max_seq_length=64 \
+  --train_batch_size=32 \
+  --learning_rate=2e-5 \
+  --num_train_epochs=50.0 \
+  --output_dir=/tmp/AuthorClass_output2/
+
+
+python run_classifier.py \
+  --task_name=AuthorClass \
+  --do_train=true \
+  --do_eval=true \
+  --data_dir=$GLUE_DIR/TestAA \
+  --vocab_file=$BERT_BASE_DIR/vocab.txt \
+  --bert_config_file=$BERT_BASE_DIR/bert_config.json \
+  --init_checkpoint=$BERT_BASE_DIR/bert_model.ckpt \
+  --max_seq_length=64 \
+  --train_batch_size=32 \
+  --learning_rate=2e-5 \
+  --num_train_epochs=50.0 \
+  --output_dir=/tmp/AuthorClass_output_2/
+
+Tmux commands
+tmux list-sessions
+tmux attach-session -t 0
+exit terminal or CTRL+B -> D
+
